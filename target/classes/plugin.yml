@@ -1,0 +1,17 @@
+name: PBunkers
+version: '1.0'
+main: me.portmapping.pbunkers.PBunkers
+softdepend:
+  - HolographicDisplays
+  - LunarClient-API
+commands:
+  match:
+  arena:
+  faction:
+    aliases:
+      - team
+      - t
+      - f
+      - factions
+      - sq
+      - squad
