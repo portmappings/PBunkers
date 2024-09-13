@@ -22,18 +22,18 @@ import java.util.UUID;
 public class Match {
     private final String name;
     private final Arena arena;
-    private List<Player> playerList;
-    private List<Player> spectatorList;
     private Team redTeam;
     private Team blueTeam;
     private Team yellowTeam;
     private Team greenTeam;
-    private MatchState matchState;
+    private MatchState matchState = MatchState.WAITING;
     private int gameTime;
     private int startTime = 12;
     private int kothTime = 600;
     private Team winner;
     private List<Block> placedBlocks = new ArrayList<>();
+    private List<Player> playerList = new ArrayList<>();
+    private List<Player> spectatorList = new ArrayList<>();
     private List<Team> teamsLeft = new ArrayList<>();
 
 

@@ -222,17 +222,16 @@ public class MatchManager {
     public void createMatch(Arena arena){
         Match match = new Match(arena.getName(),arena);
 
-        Team redTeam = new Team(Lists.newArrayList(), TeamColor.RED,6.0,new Cuboid(arena.getRedClaimMax().toBukkitLocation(),arena.getRedClaimMin().toBukkitLocation()),null,null,null,null,arena.getRedSpawn());
-        Team blueTeam = new Team(Lists.newArrayList(), TeamColor.BLUE,6.0,new Cuboid(arena.getBlueClaimMax().toBukkitLocation(),arena.getBlueClaimMin().toBukkitLocation()),null,null,null,null,arena.getBlueSpawn());
-        Team yellowTeam = new Team(Lists.newArrayList(), TeamColor.YELLOW,6.0,new Cuboid(arena.getYellowClaimMax().toBukkitLocation(),arena.getYellowClaimMin().toBukkitLocation()),null,null,null,null,arena.getYellowSpawn());
-        Team greenTeam = new Team(Lists.newArrayList(), TeamColor.GREEN,6.0, new Cuboid(arena.getGreenClaimMax().toBukkitLocation(),arena.getGreenClaimMin().toBukkitLocation()),null,null,null,null,arena.getGreenSpawn());
-        match.setMatchState(MatchState.WAITING);
+        Team redTeam = new Team(TeamColor.RED,new Cuboid(arena.getRedClaimMax().toBukkitLocation(),arena.getRedClaimMin().toBukkitLocation()), arena.getRedSpawn());
+        Team blueTeam = new Team(TeamColor.BLUE, new Cuboid(arena.getBlueClaimMax().toBukkitLocation(),arena.getBlueClaimMin().toBukkitLocation()), arena.getBlueSpawn());
+        Team yellowTeam = new Team(TeamColor.YELLOW,new Cuboid(arena.getYellowClaimMax().toBukkitLocation(),arena.getYellowClaimMin().toBukkitLocation()), arena.getYellowSpawn());
+        Team greenTeam = new Team(TeamColor.GREEN, new Cuboid(arena.getGreenClaimMax().toBukkitLocation(),arena.getGreenClaimMin().toBukkitLocation()), arena.getGreenSpawn());
+
         match.setRedTeam(redTeam);
         match.setBlueTeam(blueTeam);
         match.setYellowTeam(yellowTeam);
         match.setGreenTeam(greenTeam);
-        match.setPlayerList(new ArrayList<Player>());
-        match.setSpectatorList(new ArrayList<Player>());
+
         match.getTeamsLeft().addAll(Lists.newArrayList(match.getRedTeam(),match.getBlueTeam(),match.getYellowTeam(),match.getBlueTeam()));
 
 

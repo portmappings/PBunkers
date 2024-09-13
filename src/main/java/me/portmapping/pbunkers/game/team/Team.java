@@ -11,22 +11,28 @@ import me.portmapping.pbunkers.waypoints.Waypoint;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 
 @Setter
 @Getter
-@AllArgsConstructor
 public class Team {
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
     private TeamColor teamColor;
-    private double DTR;
+    private double DTR = 6.0;
     private Cuboid cuboid;
-    private UUID combatVillager;
-    private UUID buildVillager;
-    private UUID sellVillager;
-    private UUID enchantVillager;
+    private UUID combatVillager = null;
+    private UUID buildVillager = null;
+    private UUID sellVillager = null;
+    private UUID enchantVillager = null;
     private CustomLocation spawn;
+    public Team(TeamColor teamColor, Cuboid cuboid, CustomLocation spawn){
+        this.teamColor = teamColor;
+        this.cuboid = cuboid;
+        this.spawn = spawn;
+    }
+
 
 }
