@@ -11,14 +11,12 @@ import me.portmapping.pbunkers.game.match.Match;
 import me.portmapping.pbunkers.game.match.MatchState;
 import me.portmapping.pbunkers.game.team.Team;
 import me.portmapping.pbunkers.game.team.TeamColor;
-import me.portmapping.pbunkers.tasks.MatchRunnable;
+import me.portmapping.pbunkers.tasks.GameRunnable;
 import me.portmapping.pbunkers.user.player.PlayerData;
 import me.portmapping.pbunkers.user.player.PlayerState;
 import me.portmapping.pbunkers.utils.Cuboid;
 import me.portmapping.pbunkers.utils.item.ItemBuilder;
 import me.portmapping.pbunkers.utils.chat.CC;
-import me.portmapping.pbunkers.waypoints.Waypoint;
-import me.portmapping.pbunkers.waypoints.WaypointType;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -236,7 +234,7 @@ public class MatchManager {
 
 
         this.matchMap.put(arena.getName(),match);
-        BukkitRunnable runnable = new MatchRunnable(match,getInstance());
+        BukkitRunnable runnable = new GameRunnable(match,getInstance());
         runnable.runTaskTimer(getInstance(),20L,20L);
     }
 

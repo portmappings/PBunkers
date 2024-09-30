@@ -1,6 +1,5 @@
 package me.portmapping.pbunkers.tasks;
 
-import com.sun.scenario.effect.FilterEffect;
 import me.portmapping.pbunkers.PBunkers;
 import me.portmapping.pbunkers.game.match.events.MatchStartEvent;
 import me.portmapping.pbunkers.game.match.Match;
@@ -14,11 +13,11 @@ import org.bukkit.entity.Firework;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class MatchRunnable extends BukkitRunnable {
+public class GameRunnable extends BukkitRunnable {
     private final Match match;
     private final PBunkers plugin;
     private int endingTime = 10;
-    public MatchRunnable(Match match, PBunkers plugin){
+    public GameRunnable(Match match, PBunkers plugin){
         this.match = match;
         this.plugin = plugin;
     }
