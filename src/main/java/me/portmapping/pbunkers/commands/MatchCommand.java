@@ -27,7 +27,7 @@ public class MatchCommand implements CommandExecutor {
             this.sendMainHelp(player);
             return false;
         }
-        
+
         if(args.length==1){
             if(args[0].equalsIgnoreCase("list")){
                 this.sendMatchlist(player);
@@ -41,6 +41,23 @@ public class MatchCommand implements CommandExecutor {
                 if(arena==null){
                     player.sendMessage(CC.RED+"This arena does not exists");
                     return false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
 
                 if(plugin.getMatchManager().getMatch(arena.getName())!=null){
