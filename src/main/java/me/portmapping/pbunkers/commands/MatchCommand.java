@@ -27,6 +27,7 @@ public class MatchCommand implements CommandExecutor {
             this.sendMainHelp(player);
             return false;
         }
+        
         if(args.length==1){
             if(args[0].equalsIgnoreCase("list")){
                 this.sendMatchlist(player);
@@ -46,8 +47,10 @@ public class MatchCommand implements CommandExecutor {
                     player.sendMessage(CC.RED+"This match already exists");
                     return false;
                 }
+
                 player.sendMessage(CC.GREEN+"You made the match for the arena "+args[1]);
                 plugin.getMatchManager().createMatch(arena);
+
             }else if(args[0].equalsIgnoreCase("join")) {
                 Match match = plugin.getMatchManager().getMatch(args[1]);
                 if (match == null) {
@@ -55,30 +58,22 @@ public class MatchCommand implements CommandExecutor {
                     return false;
                 }
                 plugin.getMatchManager().joinPlayer(match, player);
-
             }
-
         }
-
-
         return false;
     }
 
     public void sendMainHelp(Player player){
-
             player.sendMessage(CC.translate("&7&m------------------------"));
             player.sendMessage(CC.translate("&c&lMatch Commands"));
             player.sendMessage(CC.translate(" "));
             player.sendMessage(CC.translate("&f/match create <arena>"));
             player.sendMessage(CC.translate("&f/arena delete "));
             player.sendMessage(CC.translate("&7&m------------------------"));
-
-
     }
 
 
     public void sendMatchlist(Player player){
-
         player.sendMessage(CC.translate("&7&m------------------------"));
         player.sendMessage(CC.translate("&c&lMatch List"));
         player.sendMessage(CC.translate(" "));
@@ -87,8 +82,6 @@ public class MatchCommand implements CommandExecutor {
             player.sendMessage(CC.translate("&e"+match.getName()+" &7- &aEnabled"));
         }
         player.sendMessage(CC.translate("&7&m------------------------"));
-
-
     }
 
 }
