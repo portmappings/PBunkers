@@ -61,61 +61,33 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>lunarclient</id>
+            <url>https://repo.lunarclient.dev</url>
+        </repository>
     </repositories>
 
     <dependencies>
-
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot18</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/spigots/PaperSpigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
-        </dependency>
-
-
-
-        <dependency>
-            <groupId>me.portmapping</groupId>
-            <artifactId>lunar</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/clients/LunarClientAPI.jar</systemPath>
+            <artifactId>spigot</artifactId>
+            <version>1.20.2-R0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>me.portmapping</groupId>
-            <artifactId>cheatbreaker</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/clients/CheatBreakerAPI.jar</systemPath>
+            <groupId>com.lunarclient</groupId>
+            <artifactId>apollo-api</artifactId>
+            <version>1.1.6</version>
         </dependency>
-
+        <!-- For Adventure support add the following dependency. -->
         <dependency>
-            <groupId>me.portmapping</groupId>
-            <artifactId>protocolsupport</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/ProtocolSupport.jar</systemPath>
+            <groupId>com.lunarclient</groupId>
+            <artifactId>apollo-extra-adventure4</artifactId>
+            <version>1.1.6</version>
         </dependency>
-        <dependency>
-            <groupId>me.portmapping</groupId>
-            <artifactId>via</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/ViaVersion.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>me.portmapping</groupId>
-            <artifactId>holo</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/holographicdisplays-plugin-3.0.3-SNAPSHOT.jar</systemPath>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
@@ -131,6 +103,10 @@
             <version>3.10.2</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
     </dependencies>
 </project>

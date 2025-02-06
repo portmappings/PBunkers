@@ -54,7 +54,7 @@ public class JoinMatchMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             switch (match.getMatchState()){
                 case WAITING:
-                    return new ItemBuilder(Material.STAINED_CLAY).durability(5).name(CC.translate("&7➥ &3"+match.getName()))
+                    return new ItemBuilder(Material.LIME_TERRACOTTA).name(CC.translate("&7➥ &3"+match.getName()))
                             .lore(
                                     Lists.newArrayList(
                                             CC.translate(" "),
@@ -64,7 +64,7 @@ public class JoinMatchMenu extends Menu {
                                             CC.translate("&eClick to join!")))
                             .build();
                 case STARTING:
-                    return new ItemBuilder(Material.STAINED_CLAY).durability(4).name(CC.translate("&7➥ &3"+match.getName()))
+                    return new ItemBuilder(Material.YELLOW_TERRACOTTA).durability(4).name(CC.translate("&7➥ &3"+match.getName()))
                             .lore(
                                     Lists.newArrayList(
                                             CC.translate(" "),
@@ -74,7 +74,7 @@ public class JoinMatchMenu extends Menu {
                                             CC.translate("&eClick to join!")))
                             .build();
                 case ACTIVE:
-                    return new ItemBuilder(Material.STAINED_CLAY).durability(14).name(CC.translate("&7➥ &3"+match.getName()))
+                    return new ItemBuilder(Material.RED_TERRACOTTA).durability(14).name(CC.translate("&7➥ &3"+match.getName()))
                             .lore(
                                     Lists.newArrayList(
                                             CC.translate(" "),
@@ -84,7 +84,7 @@ public class JoinMatchMenu extends Menu {
                                             CC.translate("&eClick to join!")))
                             .build();
                 case ENDING:
-                    return new ItemBuilder(Material.STAINED_CLAY).durability(7).name(CC.translate("&7➥ &3"+match.getName()))
+                    return new ItemBuilder(Material.BLACK_TERRACOTTA).durability(7).name(CC.translate("&7➥ &3"+match.getName()))
                             .lore(
                                     Lists.newArrayList(
                                             CC.translate(" "),
@@ -94,7 +94,7 @@ public class JoinMatchMenu extends Menu {
                                             CC.translate("&eClick to join!")))
                             .build();
                 case RESTARTING:
-                    return new ItemBuilder(Material.STAINED_CLAY).durability(7).name(CC.translate("&7➥ &3"+match.getName()))
+                    return new ItemBuilder(Material.GRAY_TERRACOTTA).durability(7).name(CC.translate("&7➥ &3"+match.getName()))
                             .lore(
                                     Lists.newArrayList(
                                             CC.translate(" "),

@@ -14,8 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import protocolsupport.api.ProtocolSupportAPI;
-import us.myles.ViaVersion.api.Via;
 
 import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
@@ -275,13 +273,6 @@ public class Utils {
 
     public static int getProtocolVersion(Player player) {
         final PluginManager pluginManager = Bukkit.getPluginManager();
-
-        if (pluginManager.getPlugin("ViaVersion") != null) {
-            return Via.getAPI().getPlayerVersion(player.getUniqueId());
-
-        } else if (pluginManager.getPlugin("ProtocolSupport") != null) {
-            return ProtocolSupportAPI.getProtocolVersion(player).getId();
-        }
 
         return 100;
     }

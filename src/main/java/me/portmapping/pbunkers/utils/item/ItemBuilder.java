@@ -2,7 +2,6 @@ package me.portmapping.pbunkers.utils.item;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
-import org.apache.commons.codec.binary.Base64;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -16,6 +15,7 @@ import org.bukkit.material.MaterialData;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 
@@ -81,8 +81,8 @@ public class ItemBuilder {
   public ItemBuilder head(String url) {
     SkullMeta headMeta = (SkullMeta) is.getItemMeta();
     GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-    byte[] encodedData = Base64.encodeBase64(
-        String.format("{textures:{SKIN:{url:\"%s\"}}}", url).getBytes());
+    byte[] encodedData = Base64.getEncoder().encode(
+            String.format("{textures:{SKIN:{url:\"%s\"}}}", url).getBytes());
     profile.getProperties().put("textures", new Property("textures", new String(encodedData)));
     Field profileField;
 
@@ -99,7 +99,7 @@ public class ItemBuilder {
   }
 
   public ItemBuilder owner(String owner) {
-    if (this.is.getType() == Material.SKULL_ITEM) {
+    if (this.is.getType() == Material.PLAYER_HEAD) {
       SkullMeta meta = (SkullMeta) this.is.getItemMeta();
       meta.setOwner(owner);
       this.is.setItemMeta(meta);

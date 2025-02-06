@@ -17,7 +17,6 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.github.paperspigot.Title;
 
 public class EntityListeners implements Listener {
 
@@ -46,7 +45,7 @@ public class EntityListeners implements Listener {
                 if(entity.getType() == EntityType.VILLAGER){
                     switch (ChatColor.stripColor(entity.getCustomName())){
                         case "Combat Shop":
-                            team.getPlayers().forEach(members -> members.sendTitle(new Title(CC.RED+"&cCombat Villager Killed",CC.WHITE+"Spawning in 3 minutes")));
+                            team.getPlayers().forEach(members -> members.sendTitle(CC.RED+"&cCombat Villager Killed",CC.WHITE+"Spawning in 3 minutes", 20 ,20 ,20));
                            new BukkitRunnable(){
                                @Override
                                public void run(){
@@ -55,7 +54,7 @@ public class EntityListeners implements Listener {
                            }.runTaskLater(plugin,3600L);
                             break;
                         case "Build Shop":
-                            team.getPlayers().forEach(members -> members.sendTitle(new Title(CC.RED+"&cBuild Villager Killed",CC.WHITE+"Spawning in 3 minutes")));
+                            team.getPlayers().forEach(members -> members.sendTitle(CC.RED+"&cBuild Villager Killed",CC.WHITE+"Spawning in 3 minutes", 20 ,20 ,20));
                             new BukkitRunnable(){
                                 @Override
                                 public void run(){
@@ -64,7 +63,7 @@ public class EntityListeners implements Listener {
                             }.runTaskLater(plugin,3600L);
                             break;
                         case "Sell Items":
-                            team.getPlayers().forEach(members -> members.sendTitle(new Title(CC.RED+"&cSell Villager Killed",CC.WHITE+"Spawning in 3 minutes")));
+                            team.getPlayers().forEach(members -> members.sendTitle(CC.RED+"&cSell Villager Killed",CC.WHITE+"Spawning in 3 minutes", 20 ,20 ,20));
                             new BukkitRunnable(){
                                 @Override
                                 public void run(){

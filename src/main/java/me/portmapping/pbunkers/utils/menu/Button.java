@@ -1,7 +1,7 @@
 package me.portmapping.pbunkers.utils.menu;
 
 import me.portmapping.pbunkers.PBunkers;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -28,15 +28,15 @@ public abstract class Button {
   }
 
   public static void playFail(Player player) {
-    player.playSound(player.getLocation(), Sound.DIG_GRASS, 20F, 0.1F);
+    player.playSound(player.getLocation(), Sound.BLOCK_GRASS_BREAK, 20F, 0.1F);
   }
 
   public static void playSuccess(Player player) {
-    player.playSound(player.getLocation(), Sound.NOTE_PIANO, 20F, 15F);
+    player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 20F, 15F);
   }
 
   public static void playNeutral(Player player) {
-    player.playSound(player.getLocation(), Sound.CLICK, 20F, 1F);
+    player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 20F, 1F);
   }
 
   public abstract ItemStack getButtonItem(Player player);

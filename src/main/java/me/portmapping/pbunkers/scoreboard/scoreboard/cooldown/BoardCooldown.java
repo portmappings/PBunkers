@@ -2,7 +2,7 @@ package me.portmapping.pbunkers.scoreboard.scoreboard.cooldown;
 
 import lombok.Getter;
 import me.portmapping.pbunkers.scoreboard.scoreboard.Board;
-import org.apache.commons.lang.time.DurationFormatUtils;
+import me.portmapping.pbunkers.utils.extra.DurationFormatUtils;
 
 import java.text.DecimalFormat;
 

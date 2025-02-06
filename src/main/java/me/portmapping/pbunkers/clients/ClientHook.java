@@ -2,7 +2,6 @@ package me.portmapping.pbunkers.clients;
 
 import lombok.Getter;
 import me.portmapping.pbunkers.PBunkers;
-import me.portmapping.pbunkers.clients.type.CheatBreakerClient;
 import me.portmapping.pbunkers.clients.type.LunarClient;
 import me.portmapping.pbunkers.utils.Utils;
 import me.portmapping.pbunkers.waypoints.Waypoint;
@@ -35,9 +34,6 @@ public class ClientHook implements Client {
             clients.add(new LunarClient(this));
         }
 
-        if (Utils.verifyPlugin("CheatBreakerAPI", getInstance())) {
-            clients.add(new CheatBreakerClient(this));
-        }
     }
 
     @Override

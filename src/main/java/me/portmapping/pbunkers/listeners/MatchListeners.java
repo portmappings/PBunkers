@@ -19,7 +19,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
-import org.github.paperspigot.Title;
 
 import java.util.function.UnaryOperator;
 
@@ -37,7 +36,7 @@ public class MatchListeners implements Listener {
 
 
         for (Player player : match.getPlayerList()){
-            player.sendTitle(new Title(CC.translate("&b&lMatch Started!"),"",20,70,20));
+            player.sendTitle(CC.translate("&b&lMatch Started!"),"",20,70,20);
             plugin.getPlayerManager().getPlayerData(player).setPlayerState(PlayerState.FIGHTING);
             player.getInventory().clear();
             player.setFlying(false);
